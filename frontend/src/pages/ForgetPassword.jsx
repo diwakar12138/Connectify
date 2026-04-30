@@ -16,8 +16,9 @@ import ModeCommentOutlined from '@mui/icons-material/ModeCommentOutlined';
 import SendOutlined from '@mui/icons-material/SendOutlined';
 import Face from '@mui/icons-material/Face';
 import BookmarkBorderRoundedIcon from '@mui/icons-material/BookmarkBorderRounded';
-
 import URL from '../Url';
+
+
 
 const Home = () => {
   const [AllPosts,setAllPosts]  = useState([]);
@@ -78,7 +79,7 @@ const Home = () => {
       </CardContent>
       <CardOverflow>
         
-          <img src={ele.file} className='object contain h-[250px]' />
+          <img src={`http://localhost:8090/uploads/${ele.file}`} className='object contain h-[250px]' alt="" loading="lazy" />
 
       </CardOverflow>
       <CardContent orientation="horizontal" sx={{ alignItems: 'center', mx: -1 }}>

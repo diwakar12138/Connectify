@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {toast} from 'react-toastify'
+import URL from '../Url'
 const Signup = () => {
 
     let nameRef = useRef()    //{current:undefined}
@@ -18,7 +19,7 @@ const Signup = () => {
         }
         console.log(obj)
 
-        let res = await fetch('http://localhost:8090/users/signup',{
+        let res = await fetch(URL+'/users/signup',{
             method:"POST",
             headers:{
                 'content-type':'application/json'

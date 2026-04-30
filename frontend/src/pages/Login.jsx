@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import URL from '../Url';
 
 const Login = () => {
 
@@ -18,7 +19,7 @@ const Login = () => {
         }
         console.log(obj)
 
-        let res = await fetch('http://localhost:8090/users/login',{
+        let res = await fetch(URL+'/users/login',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
@@ -49,6 +50,7 @@ const Login = () => {
 
             <label htmlFor="">Password</label>
             <input ref={passwordRef} className='border px-2 py-1 rounded' type="password" placeholder='enter your password' />
+            <Link to={'/forgetPassword'} className='text-blue-500'>forget password</Link>
 
             <button onClick={handleSubmit} className='bg-black text-white hover:bg-[#211e1e] p-4'>Login</button>
         </form>

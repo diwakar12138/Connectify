@@ -39,7 +39,7 @@ const Post = require('../models/postCollection')
 const createPost = async (req, res) => {
     try {
         const { title } = req.body
-        const file = req.file ? req.file.filename : null
+        const file = req.file ? req.file.path : null
         const userId = req.user
         console.log(req.user)
         console.log("userId = ", userId)

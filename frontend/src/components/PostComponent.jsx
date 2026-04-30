@@ -3,6 +3,7 @@ import { FcAddImage } from "react-icons/fc";
 import { BsEmojiLaughing } from "react-icons/bs";
 import EmojiPicker from 'emoji-picker-react';
 import { toast } from 'react-toastify'
+import Url from '../Url';
 
 const PostComponent = (props) => {
 
@@ -23,7 +24,9 @@ const PostComponent = (props) => {
     }
 
     const handleInputChanger = (e) => {
+        console.log(e.target.files[0])
         setimage(e.target.files[0])
+
     }
 
     async function handleSubmit(){
@@ -31,7 +34,7 @@ const PostComponent = (props) => {
         formData.append('title',titleRef.current.value)
         formData.append('image',image)
 
-        let res = await fetch('http://localhost:8090/posts/create',{
+        let res = await fetch(Url+'/posts/create',{
             method:'POST',
             headers:{
                 'authorization':token
@@ -82,7 +85,7 @@ const PostComponent = (props) => {
             {/* Image preview */}
             {image && (
                 <div className='mt-3 relative'>
-
+                        
                     <img
                         src={URL.createObjectURL(image)}
                         alt=''

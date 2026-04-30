@@ -19,14 +19,14 @@ const {
     updatePost,
     deletePost
 } = require('../controllers/postController')
-const upload = require('../config/multer')
+const { uploads } = require('../config/multer');
 const verifyToken = require('../middleware/checkToken')
 
 
 
 
 // router.post('/create',upload.single('image'),verifyToken,createPost);
-router.post('/create', verifyToken, upload.single('image'), createPost)
+router.post('/create', verifyToken, uploads.single('image'), createPost)
 router.get('/allpost', getPosts)
 router.put('/update/:id', updatePost)
 router.delete('/delete/:id', deletePost)
