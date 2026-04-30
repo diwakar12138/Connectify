@@ -18,7 +18,7 @@ app.set('view engine','ejs')
 
 
 app.use(cors({
-  origin:['https://social-media-frontend-tls7-kxey6khuz-diwakar12138s-projects.vercel.app','https://social-media-frontend-tls7.vercel.app','https://social-media-frontend-tls7-git-main-diwakar12138s-projects.vercel.app' ,'http://localhost:5143'],
+  origin:['https://social-media-frontend-tls7-kxey6khuz-diwakar12138s-projects.vercel.app','https://social-media-frontend-tls7.vercel.app','https://social-media-frontend-tls7-git-main-diwakar12138s-projects.vercel.app' ,'http://localhost:5143','https://social-media-frontend-tls7-9dteqiy7r-diwakar12138s-projects.vercel.app'],
   methods:['get', 'post','put','delete']
 }))
 app.use(express.json())  //parse the data
