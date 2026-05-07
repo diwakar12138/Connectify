@@ -16,11 +16,11 @@ console.log(process.env.NODE_MAILER)
 
 app.set('view engine','ejs')
 
-app.use((req,res,next) => {
-  res.header("Access to all URL's origins","*")
-})
+// app.use((req,res,next) => {
+//   res.header("Access to all URL's origins","*")
+// })
 
-app.use(cors())
+app.use(cors());
 app.use(express.json())  //parse the data
 app.get('/' , (req,res)=>{
     res.send('welcome page')

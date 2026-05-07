@@ -218,6 +218,19 @@ const updatePassword = async(req,res)=>{
     res.status(200).json({msg:"password updated successfully"})
 }
 
+const searchUser = async(req,res)=>{
+    let {name} = req.query;
+    if(!name.length){
+        return res.status(200).json({users:[]})
+    }
+
+    let users = await userCollection.find({name:RegExp(name)}).select('name profilePic')
+
+    res.status(200).json({users})
+
+}
+
+
 module.exports = {
     createUser,
     loginUser,
@@ -226,5 +239,6 @@ module.exports = {
     dummyUpload,
     forgetPassword,
     getResetToken,
-    updatePassword
+    updatePassword,
+    searchUser
 }

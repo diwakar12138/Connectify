@@ -1,5 +1,5 @@
 const express = require('express');
-const { createUser, loginUser, updateUser, deleteUser, dummyUpload, forgetPassword, getResetToken, updatePassword } = require('../controllers/userController');
+const { createUser, loginUser, updateUser, deleteUser, dummyUpload, forgetPassword, getResetToken, updatePassword, searchUser } = require('../controllers/userController');
 const { uploads } = require('../config/multer');
 const router = express.Router();
 
@@ -12,5 +12,7 @@ router.post('/forgetpassword',forgetPassword)
 
 router.get('/forgetpassword/:token',getResetToken)
 router.put('/updatepassword/:token',updatePassword)
+
+router.get('/searchFriends',searchUser)
 
 module.exports = router

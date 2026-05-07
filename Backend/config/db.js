@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config()
+console.log(process.env.MONGO_USERNAME)
+console.log(process.env.MONGO_PASSWORD)
+
 async function connection(){
     try{
         let localURL = 'mongodb://localhost:27017/g5SocialMedia'
         let URL = "mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@socialmediag5.fks1ore.mongodb.net/?appName=SocialMediaG5"
-        await mongoose.connect("mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@socialmediag5.fks1ore.mongodb.net/?appName=SocialMediaG5")
+
+        await mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@socialmediag5.fks1ore.mongodb.net/?appName=SocialMediaG5`)
         console.log("mongodb connected successfully")
     }
     catch(error) {
